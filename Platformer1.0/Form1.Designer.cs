@@ -42,10 +42,13 @@
             this.Ball = new System.Windows.Forms.PictureBox();
             this.RightUpCeiling = new System.Windows.Forms.Timer(this.components);
             this.RightDownGround = new System.Windows.Forms.Timer(this.components);
-            this.LeftUp = new System.Windows.Forms.Timer(this.components);
-            this.LeftDown = new System.Windows.Forms.Timer(this.components);
+            this.LeftUpCeiling = new System.Windows.Forms.Timer(this.components);
+            this.LeftUpWall = new System.Windows.Forms.Timer(this.components);
             this.RightUpWall = new System.Windows.Forms.Timer(this.components);
             this.RightDownWall = new System.Windows.Forms.Timer(this.components);
+            this.LeftDownWall = new System.Windows.Forms.Timer(this.components);
+            this.LeftDownGround = new System.Windows.Forms.Timer(this.components);
+            this.Game_Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ceiling)).BeginInit();
@@ -105,7 +108,6 @@
             this.RightWall.Size = new System.Drawing.Size(21, 457);
             this.RightWall.TabIndex = 4;
             this.RightWall.TabStop = false;
-            this.RightWall.Click += new System.EventHandler(this.RightWall_Click);
             // 
             // Down
             // 
@@ -135,7 +137,7 @@
             // Ball
             // 
             this.Ball.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Ball.Location = new System.Drawing.Point(565, 76);
+            this.Ball.Location = new System.Drawing.Point(440, 229);
             this.Ball.Name = "Ball";
             this.Ball.Size = new System.Drawing.Size(11, 12);
             this.Ball.TabIndex = 6;
@@ -151,15 +153,15 @@
             this.RightDownGround.Interval = 10;
             this.RightDownGround.Tick += new System.EventHandler(this.RightDownGround_Tick);
             // 
-            // LeftUp
+            // LeftUpCeiling
             // 
-            this.LeftUp.Interval = 10;
-            this.LeftUp.Tick += new System.EventHandler(this.LeftUp_Tick);
+            this.LeftUpCeiling.Interval = 10;
+            this.LeftUpCeiling.Tick += new System.EventHandler(this.LeftUpCeiling_Tick);
             // 
-            // LeftDown
+            // LeftUpWall
             // 
-            this.LeftDown.Interval = 10;
-            this.LeftDown.Tick += new System.EventHandler(this.LeftDown_Tick);
+            this.LeftUpWall.Interval = 10;
+            this.LeftUpWall.Tick += new System.EventHandler(this.LeftUpWall_Tick);
             // 
             // RightUpWall
             // 
@@ -170,6 +172,22 @@
             // 
             this.RightDownWall.Interval = 10;
             this.RightDownWall.Tick += new System.EventHandler(this.RightDownWall_Tick);
+            // 
+            // LeftDownWall
+            // 
+            this.LeftDownWall.Interval = 10;
+            this.LeftDownWall.Tick += new System.EventHandler(this.LeftDownWall_Tick);
+            // 
+            // LeftDownGround
+            // 
+            this.LeftDownGround.Interval = 10;
+            this.LeftDownGround.Tick += new System.EventHandler(this.LeftDownGround_Tick);
+            // 
+            // Game_Timer
+            // 
+            this.Game_Timer.Enabled = true;
+            this.Game_Timer.Interval = 10;
+            this.Game_Timer.Tick += new System.EventHandler(this.Game_Timer_Tick);
             // 
             // Form1
             // 
@@ -214,10 +232,13 @@
         private System.Windows.Forms.PictureBox Ball;
         private System.Windows.Forms.Timer RightUpCeiling;
         private System.Windows.Forms.Timer RightDownGround;
-        private System.Windows.Forms.Timer LeftUp;
-        private System.Windows.Forms.Timer LeftDown;
+        private System.Windows.Forms.Timer LeftUpCeiling;
+        private System.Windows.Forms.Timer LeftUpWall;
         private System.Windows.Forms.Timer RightUpWall;
         private System.Windows.Forms.Timer RightDownWall;
+        private System.Windows.Forms.Timer LeftDownWall;
+        private System.Windows.Forms.Timer LeftDownGround;
+        private System.Windows.Forms.Timer Game_Timer;
     }
 }
 
